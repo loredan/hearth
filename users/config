@@ -1,0 +1,15 @@
+{
+  "mood": {
+    "values": [
+      0,
+      1,
+      2
+    ],
+    "names": [
+      "Bad",
+      "Normal",
+      "Good"
+    ]
+  },
+  "time": 0
+}
