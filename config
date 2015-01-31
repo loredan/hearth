@@ -1,0 +1,21 @@
+{
+  "user": {
+    "mood": {
+      "values": [
+        0,
+        1,
+        2
+      ],
+      "names": [
+        "Bad",
+        "Normal",
+        "Good"
+      ]
+    },
+    "time": 0
+  },
+  "home_location": {
+    "lat": 55.749148,
+    "long": 37.806241
+  }
+}

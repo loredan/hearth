@@ -36,13 +36,21 @@ check_configuration()
         touch users/female
     fi
 
-    if [[ ! -e "users/config" ]]; then
+    #config
+
+    if [[ ! -e "config" ]]; then
         touch users/config
     fi
 
-    if [[ -z `cat users/config` ]]; then
+    if [[ -z `cat config` ]]; then
         printf "User config empty\n"
         exit 1
+    fi
+
+    #logs
+
+    if [[ ! -d "logs" ]]; then
+        mkdir logs
     fi
 }
 
@@ -72,7 +80,9 @@ launch()
     fi
 
     check_configuration
-    exec -a "hearth_server" java -XX:+UseAltSigs -jar hearth_server.jar &
+
+    logfile=`date`
+    exec -a "hearth_server" java -XX:+UseAltSigs -jar hearth_server.jar 2> "logs/$logfile" &
     echo $! > hearth_server.pid
     printf "Daemon started\n"
 }
