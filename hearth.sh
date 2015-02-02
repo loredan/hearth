@@ -81,7 +81,7 @@ launch()
 
     check_configuration
 
-    logfile=`date`
+    logfile=`date --rfc-3339=s`
     exec -a "hearth_server" java -XX:+UseAltSigs -jar hearth_server.jar 2> "logs/$logfile" &
     echo $! > hearth_server.pid
     printf "Daemon started\n"
